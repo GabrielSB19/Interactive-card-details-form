@@ -1,1 +1,29 @@
+@use 'variables';
 @use 'initial';
+
+.main-container{
+    border: 1px solid red;
+    width: 375px;
+    margin: auto;
+    &__background-section{
+        background-image: url(../images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        height: 240px;
+    }
+    &__form-section{
+        padding: 90px 24px 45px;
+    }
+    @media (min-width: 1440px){
+        width: 1440px;
+        display: flex;
+        &__background-section{
+            background-image: url(../images/bg-main-desktop.png);
+            width: 900px;
+            height: 900px;
+        }
+    }
+}
+
+.card{
+    border: 1px solid white;
+}
