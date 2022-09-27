@@ -28,6 +28,7 @@ body {
   background-image: url(../images/bg-main-mobile.png);
   background-repeat: no-repeat;
   height: 240px;
+  position: relative;
 }
 .main-container__form-section {
   padding: 90px 24px 45px;
@@ -45,7 +46,70 @@ body {
 }
 
 .card {
-  border: 1px solid white;
+  width: 288px;
+  height: 160px;
+  color: hsl(0deg, 0%, 100%);
+  padding: 20px;
+  background-image: url("../images/bg-card-front.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 18px;
+  top: 126px;
+  z-index: 1;
+  letter-spacing: 2px;
+}
+@media (min-width: 1440px) {
+  .card {
+    width: 450px;
+    height: 247px;
+    padding: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  .card {
+    left: 167px;
+    top: 187px;
+  }
+}
+.card__logo {
+  width: 55px;
+  margin-bottom: 30px;
+}
+.card__number {
+  margin-bottom: 15px;
+}
+.card__details {
+  display: flex;
+  font-size: 0.6em;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.card-back {
+  width: 288px;
+  height: 160px;
+  color: hsl(0deg, 0%, 100%);
+  padding: 20px;
+  background-image: url("../images/bg-card-back.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 75px;
+  top: 30px;
+}
+@media (min-width: 1440px) {
+  .card-back {
+    width: 450px;
+    height: 247px;
+    padding: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  .card-back {
+    left: 257px;
+    top: 468px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
