@@ -121,4 +121,26 @@
             cursor: pointer;
         }
     }
+    @media (min-width:1440px) {
+        width: 385px;
+        margin-top: 180px;
+        &__input{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.error{
+    color: variables.$Red;
+    margin: -10px 0 18px;
+    font-size: 0.6em;
+}
+
+.error-container{
+    display: flex;
+    gap: 5px;
+    & div{
+        width: 100px;
+        text-align: center;
+    }
 }

@@ -183,5 +183,29 @@ body {
 .form__submit:hover {
   cursor: pointer;
 }
+@media (min-width: 1440px) {
+  .form {
+    width: 385px;
+    margin-top: 180px;
+  }
+  .form__input {
+    margin-bottom: 40px;
+  }
+}
+
+.error {
+  color: hsl(0deg, 100%, 66%);
+  margin: -10px 0 18px;
+  font-size: 0.6em;
+}
+
+.error-container {
+  display: flex;
+  gap: 5px;
+}
+.error-container div {
+  width: 100px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */
