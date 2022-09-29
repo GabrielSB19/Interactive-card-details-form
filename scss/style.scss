@@ -44,9 +44,34 @@
         justify-content: space-between;
         text-transform: uppercase;
     }
+    @media (min-width:1440px) {
+        &__logo{
+            width: 86px;
+            margin-bottom: 55px;
+        }
+        &__number{
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+        &__details{
+            font-size: 0.8em;
+        }
+    }
 }
 
 .card-back{
     @include mixins.card("../images/bg-card-back.png");
     @include mixins.card-position(75px, 30px, 257px, 468px);
+    letter-spacing: 2px;
+    &__cvc{
+        font-size: 0.7em;
+        margin-top: 50px;
+        text-align: right;
+        padding-right: 10px;
+        @media (min-width:1440px) {
+            font-size: 1em;
+            margin-top: 80px;
+            padding-right: 30px;
+        }
+    }
 }

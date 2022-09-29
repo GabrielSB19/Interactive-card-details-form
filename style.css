@@ -85,6 +85,19 @@ body {
   justify-content: space-between;
   text-transform: uppercase;
 }
+@media (min-width: 1440px) {
+  .card__logo {
+    width: 86px;
+    margin-bottom: 55px;
+  }
+  .card__number {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+  }
+  .card__details {
+    font-size: 0.8em;
+  }
+}
 
 .card-back {
   width: 288px;
@@ -97,6 +110,7 @@ body {
   position: absolute;
   left: 75px;
   top: 30px;
+  letter-spacing: 2px;
 }
 @media (min-width: 1440px) {
   .card-back {
@@ -109,6 +123,19 @@ body {
   .card-back {
     left: 257px;
     top: 468px;
+  }
+}
+.card-back__cvc {
+  font-size: 0.7em;
+  margin-top: 50px;
+  text-align: right;
+  padding-right: 10px;
+}
+@media (min-width: 1440px) {
+  .card-back__cvc {
+    font-size: 1em;
+    margin-top: 80px;
+    padding-right: 30px;
   }
 }
 
