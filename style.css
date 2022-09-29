@@ -138,9 +138,6 @@ body {
   }
 }
 
-.form {
-  display: none;
-}
 .form__label {
   text-transform: uppercase;
   font-size: 0.65em;
@@ -212,6 +209,7 @@ body {
 }
 
 .thanks-section {
+  display: none;
   width: 375px;
   margin: auto;
 }
