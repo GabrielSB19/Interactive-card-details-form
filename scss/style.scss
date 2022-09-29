@@ -144,3 +144,39 @@
         text-align: center;
     }
 }
+
+.thanks-section{
+    display: none;
+    width: 375px;
+    margin: auto;
+    &__img{
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    &__title{
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: 4px;
+        color: variables.$VeryDarkViolet;
+        margin-bottom: 24px;
+    }
+    &__text{
+        text-align: center;
+        color: variables.$DarkGrayishViolet;
+        font-size: 1.1em;
+        margin-bottom: 24px;
+    }
+    &__buttom{
+        @extend .form__submit;
+    }
+    @media (min-width:1440px) {
+        margin-top: 330px;
+        margin-right: 230px;
+        width: 385px;
+        &__input{
+            margin-bottom: 40px;
+        }
+    }
+}
