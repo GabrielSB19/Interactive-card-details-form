@@ -28,20 +28,20 @@
     </section>
     <section class="main-container__form-section">
       <form action="" class="form">
-        <label for="cardholder">Cardholder Name</label>
+        <label class="form__label" for="cardholder">Cardholder Name</label>
         <input class="form__input" type="text" name="cardholder" id="cardholder" placeholder="e.g. Jane Appleseed">
         <div class="form__cardholder-error error"></div>
-        <label for="cardnumber">Card Number</label>
+        <label class="form__label" for="cardnumber">Card Number</label>
         <input class="form__input" type="text" name="cardnumber" id="cardnumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
         <div class="form__cardnumber-error error"></div>
         <div class="form__date-cvc">
-          <label for="">Exp. Date (MM/YY)</label>
-          <label for="">CVC</label>
-          <div>
+          <label class="form__label" for="">Exp. Date (MM/YY)</label>
+          <label class="form__label" for="">CVC</label>
+          <div class="form__date">
             <input class="form__input" type="text" maxlength="2" name="cardmonth" placeholder="MM" id="cardmonth">
             <input class="form__input" type="text" maxlength="4"name="cardyear" placeholder="YY" id="cardyear">
           </div>
-          <input type="text" name="cardcvc" id="cardcvc" maxlength="3" placeholder="e.g. 123">
+          <input class="form__input" type="text" name="cardcvc" id="cardcvc" maxlength="3" placeholder="e.g. 123">
           <div class="error-container">
             <div class="form__input-mm--error error"></div>
             <div class="form__input-yy--error error"></div>
