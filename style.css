@@ -212,6 +212,7 @@ body {
   display: none;
   width: 375px;
   margin: auto;
+  margin-top: 80px;
 }
 .thanks-section__img {
   display: block;
@@ -234,7 +235,7 @@ body {
 }
 @media (min-width: 1440px) {
   .thanks-section {
-    margin-top: 330px;
+    margin-top: 250px;
     margin-right: 230px;
     width: 385px;
   }

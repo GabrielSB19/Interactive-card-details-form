@@ -153,9 +153,7 @@ submit.addEventListener('click', e =>{
     }
 
     if(i == 5){
-        console.log("Todo bien");
-    } else {
-        console.log("Todo mal xd");
+        showThankyou();
     }
 })
 
@@ -170,4 +168,12 @@ const validationsTotal = (input, cardError, style) =>{
         out = false;
     }
     return out;
+}
+
+let formSection = document.querySelector(".main-container__form-section");
+let thanksSection = document.querySelector(".thanks-section");
+
+const showThankyou = ()=>{
+    formSection.style.display = "none";
+    thanksSection.style.display = "grid";
 }
