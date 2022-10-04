@@ -105,6 +105,24 @@ const styleInputYear = (msg, style)=>{
     inputYear.style.border = `1px solid ${style}`
 }
 
-
+//Get CVC
 
 let cardCVC = document.querySelector(".card-back__cvc");
+let inputCVC = document.querySelector("#cardcvc");
+
+inputCVC.addEventListener('input', e => {
+    if(inputCVC.value == ""){
+        cardCVC.innerText = "000";
+    } else {
+        cardCVC.innerText = splitCVC(inputCVC.value);
+    }
+})
+
+const splitCVC = e =>{
+    let str = ""
+    for (let i = 0; i < 3-e.length; i++) {
+        str += "0";
+    }
+
+    return str += e
+}
