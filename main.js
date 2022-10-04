@@ -1,10 +1,5 @@
 "use strict";
 
-//Get Information in the Card
-let cardMonth = document.querySelector(".card__details-month");
-let cardYear = document.querySelector(".card__details-year");
-let cardCVC = document.querySelector(".card-back__cvc");
-
 //Add Name Input
 let cardName = document.querySelector(".card__details-name");
 let inputName = document.querySelector("#cardholder");
@@ -56,3 +51,60 @@ const splitNumber = n =>{
     str = str.substring(0,4) + " " + str.substring(4,8)+ " "+ str.substring(8,12) + " " + str.substring(12,16);
     cardNumber.innerText = str;
 }
+
+//Get EXP Date
+let cardMonth = document.querySelector(".card__details-month");
+let cardYear = document.querySelector(".card__details-year");
+let inputMonth = document.querySelector("#cardmonth");
+let inputYear = document.querySelector("#cardyear");
+let errorMonth = document.querySelector(".form__input-mm--error");
+let errorYear = document.querySelector(".form__input-yy--error");
+
+inputMonth.addEventListener('input', (e)=>{
+    if(inputMonth.value == ""){
+        cardMonth.innerText = "00"
+    } else {
+        if(inputMonth.value <= 12 || inputMonth > 0){
+            cardMonth.innerText = splitMonth(inputMonth.value); 
+            styleInputMonth("", "hsl(270, 3%, 87%)");
+        } else {
+            styleInputMonth("month no valid", "hsl(0, 100%, 66%)")
+        }
+    }
+})
+
+const styleInputMonth = (msg, style)=>{
+    errorMonth.innerText = msg;
+    inputMonth.style.border = `1px solid ${style}`
+}
+
+const splitMonth = e =>{
+    if(e.length == 1){
+        return "0"+e
+    } else {
+        return e
+    }
+}
+
+inputYear.addEventListener('input', (e)=>{
+    if(inputYear.value == ""){
+        cardYear.innerText = "00"
+        styleInputYear("", "hsl(270, 3%, 87%)");
+    } else {
+        if(inputYear.value <= 2050 && inputYear.value > 2022){
+            cardYear.innerText = inputYear.value 
+            styleInputYear("", "hsl(270, 3%, 87%)");
+        } else {
+            styleInputYear("year no valid", "hsl(0, 100%, 66%)")
+        }
+    }
+})
+
+const styleInputYear = (msg, style)=>{
+    errorYear.innerText = msg;
+    inputYear.style.border = `1px solid ${style}`
+}
+
+
+
+let cardCVC = document.querySelector(".card-back__cvc");
