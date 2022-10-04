@@ -13,7 +13,6 @@ inputName.addEventListener('input', ()=>{
     } else {
         inputName.style.border = "1px solid hsl(270, 3%, 87%)";
         cardError.innerText = "";
-
     }
 })
 
@@ -116,11 +115,14 @@ const styleInputYear = (msg, style)=>{
 
 let cardCVC = document.querySelector(".card-back__cvc");
 let inputCVC = document.querySelector("#cardcvc");
+let errorCVC = document.querySelector(".form__input-cvc--error")
 
 inputCVC.addEventListener('input', e => {
     if(inputCVC.value == ""){
         cardCVC.innerText = "000";
     } else {
+        inputCVC.style.border = "1px solid hsl(270, 3%, 87%)"
+        errorCVC.innerText = "";
         cardCVC.innerText = splitCVC(inputCVC.value);
     }
 })
@@ -138,21 +140,34 @@ let submit = document.querySelector(".form__submit");
 
 submit.addEventListener('click', e =>{
     e.preventDefault();
-    let validations = true;
-    let errorStyle = "1px solid hsl(0, 100%, 66%)";
-    if(inputName.value == ""){
-       inputName.style.border = errorStyle;
-        cardError.innerText = "Can't be empty";
-        validations = false;
-    } else if (cardNumber.style.border == errorStyle || inputNumber.value == ""){
-        validations = false;
-    } else if (cardMonth.style.border == errorStyle || inputMonth.value == ""){
-        validations = false;
-    } else if (cardYear.style.border == errorStyle || inputYear.value == ""){
-        validations = false;
-    } else if (cardCVC.style.border == errorStyle || inputCVC.value == ""){
-        validations = false;
+    let i = 0;
+    let errorStyle = "1px solid hsl(0, 100%, 66%)"
+    let out = true
+    while (i<5 && out){
+        out = validationsTotal(inputName, cardError, errorStyle);
+        out = validationsTotal(inputNumber, errorNumber, errorStyle);
+        out = validationsTotal(inputMonth, errorMonth, errorStyle);
+        out = validationsTotal(inputYear, errorYear, errorStyle);
+        out = validationsTotal(inputCVC, errorCVC, errorStyle);
+        i++;
+    }
+
+    if(i == 5){
+        console.log("Todo bien");
     } else {
-        console.log("Terminado");
+        console.log("Todo mal xd");
     }
 })
+
+
+const validationsTotal = (input, cardError, style) =>{
+    let out = true;
+    if(input.value == ""){
+        input.style.border = style;
+        cardError.innerText = "Can't be empty";
+        out = false;
+    } else if (input.style.border == style){
+        out = false;
+    }
+    return out;
+}
