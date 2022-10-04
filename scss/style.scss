@@ -6,7 +6,7 @@
     width: 375px;
     margin: auto;
     &__background-section{
-        background-image: url(../images/bg-main-mobile.png);
+        background-image: url(images/bg-main-mobile.png);
         background-repeat: no-repeat;
         height: 240px;
         position: relative;
@@ -18,7 +18,7 @@
         width: 1440px;
         display: flex;
         &__background-section{
-            background-image: url(../images/bg-main-desktop.png);
+            background-image: url(images/bg-main-desktop.png);
             width: 900px;
             height: 900px;
         }
@@ -26,7 +26,7 @@
 }
 
 .card{
-    @include mixins.card("../images/bg-card-front.png");
+    @include mixins.card("images/bg-card-front.png");
     @include mixins.card-position(18px, 126px, 167px, 187px);
     z-index: 1;
     letter-spacing: 2px;
@@ -59,7 +59,7 @@
 }
 
 .card-back{
-    @include mixins.card("../images/bg-card-back.png");
+    @include mixins.card("images/bg-card-back.png");
     @include mixins.card-position(75px, 30px, 257px, 468px);
     letter-spacing: 2px;
     &__cvc{
