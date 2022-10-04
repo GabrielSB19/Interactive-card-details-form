@@ -1,15 +1,22 @@
 "use strict";
 
+
 //Add Name Input
 let cardName = document.querySelector(".card__details-name");
 let inputName = document.querySelector("#cardholder");
+let cardError = document.querySelector(".form__cardholder-error");
 
 inputName.addEventListener('input', ()=>{
     cardName.innerText = inputName.value;
     if(inputName.value == ""){
         cardName.innerText = "Jane Appleseed";
-    }    
+    } else {
+        inputName.style.border = "1px solid hsl(270, 3%, 87%)";
+        cardError.innerText = "";
+
+    }
 })
+
 
 //Add Number Input
 let cardNumber = document.querySelector(".card__number");
@@ -126,3 +133,26 @@ const splitCVC = e =>{
 
     return str += e
 }
+
+let submit = document.querySelector(".form__submit");
+
+submit.addEventListener('click', e =>{
+    e.preventDefault();
+    let validations = true;
+    let errorStyle = "1px solid hsl(0, 100%, 66%)";
+    if(inputName.value == ""){
+       inputName.style.border = errorStyle;
+        cardError.innerText = "Can't be empty";
+        validations = false;
+    } else if (cardNumber.style.border == errorStyle || inputNumber.value == ""){
+        validations = false;
+    } else if (cardMonth.style.border == errorStyle || inputMonth.value == ""){
+        validations = false;
+    } else if (cardYear.style.border == errorStyle || inputYear.value == ""){
+        validations = false;
+    } else if (cardCVC.style.border == errorStyle || inputCVC.value == ""){
+        validations = false;
+    } else {
+        console.log("Terminado");
+    }
+})
